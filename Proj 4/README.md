@@ -1,0 +1,16 @@
+# Contador de Personas
+Para la implementación física del circuito utilizamos un microcontrolador AtMega328P con un reloj de 16 MHz. Estas dos características las tiene ya embebidas el Arduino nano, por lo que fue nuestra elección. A nuestros puertos de entrada le añadimos 3 botones con sus respectivas resistencias de pull-up para poder seleccionar una de las 3 opciones; añadir disminuir o resetear la cuenta. Empleamos un display de cuarzo líquido de 16x2 para desplegar la cuenta, el display cuenta con 3 pines de voltaje con una tensión de 5v, 3 tierras físicas, un regulador de voltaje con un potenciómetro para controlar el brillo y cuatro líneas de datos conectadas a las salidas del micro. Se incluye la configuración del LCD junto con las librerías necesarias para realizar el programa. Se define una variable para llevar la cuenta, a esta se le suma, resta o reinicia, y una variable para guardar el dato y poder desplegarlo en el LCD. Se configura el puerto C como 07h, tomando en cuenta que los 3 botones se encuentran conectados a los 3 bits menos significativos del puerto, es decir 00000111b. Se imprime el mensaje People Counter en la primera línea del LCD, junto con el valor del contador, que se evalúa en el ciclo while. En caso de estar presionado el botón del pin 0, la cuenta se reinicia y se muestra 000 en el LCD; si el botón presionado es el del pin 1, la cuenta decrementa en 1, mientras que el pin 2 aumenta la cuenta en 1. Esto respetando que los valores se encuentren dentro de 000 y 999, utilizando delays para evitar el efecto del rebote en los botones.
+
+[Demo](https://www.youtube.com/watch?v=32Yjg6dHhCY)
+
+## Archivos
+* counter.jpeg: Diagrama eléctrico del circuito.
+* counter.c: Listado del programa en C.
+
+# People Counter
+For the physical implementation of the circuit we use an AtMega328P microcontroller with a 16 MHz clock. These two characteristics are already embedded in the Arduino nano, so it was our choice. We added 3 buttons to our input ports with their respective pull-up resistors to be able to select one of the 3 options; add decrease or reset the account. We use a 16x2 liquid quartz display to display the account, the display has 3 voltage pins with a voltage of 5v, 3 physical grounds, a voltage regulator with a potentiometer to control the brightness and four data lines connected to the microphone outputs. The LCD configuration is included together with the necessary libraries to carry out the program. A variable is defined to keep track, it is added, subtracted or restarted, and a variable to save the data and be able to display it on the LCD. Port C is configured as 07h, taking into account that the 3 buttons are connected to the 3 least significant bits of the port, that is, 00000111b. The message People Counter is printed on the first line of the LCD, along with the value of the counter, which is evaluated in the while loop. In case the pin 0 button is pressed, the count is reset and 000 is displayed on the LCD; if the button pressed is that of pin 1, the count decreases by 1, while pin 2 increases the count by 1. This respecting that the values ​​are between 000 and 999, using delays to avoid the bounce effect on the buttons.
+## Files
+* counter.jpeg: Electrical Circuit Diagram.
+* counter.c: Program listing in C.
+
+
