@@ -15,7 +15,7 @@
 #endasm
 
 char NombreArchivo[]  = "0:hola.txt";
-char TextoEscritura[] = "\nA01251916\nA01702712";
+char TextoEscritura[] = "\nA01251916\nA01351621";
 
 interrupt [TIM1_COMPA] void timer1_compa_isr(void)
 {
